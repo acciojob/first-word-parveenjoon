@@ -1,12 +1,24 @@
 function firstWord(s) {
-  // If the string is empty or does not contain any space, return the entire string
-  if (s === '' || s.indexOf(' ') === -1) {
+  // Remove leading and trailing whitespace
+  s = s.trim();
+  
+  // If the string is empty, return an empty string
+  if (!s) {
+    return '';
+  }
+  
+  // Find the index of the first space character
+  const spaceIndex = s.indexOf(' ');
+  
+  // If no space is found, return the entire string
+  if (spaceIndex === -1) {
     return s;
   }
   
-  // Split the string by space and return the first element
-  return s.split(' ')[0];
+  // Otherwise, return the substring up to the first space
+  return s.slice(0, spaceIndex);
 }
+
 
 // Do not change the code below
 
